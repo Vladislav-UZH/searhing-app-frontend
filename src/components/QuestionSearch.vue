@@ -66,8 +66,14 @@ function getSearchedResults() {
     </form>
     <ul class="list">
       <li v-for="item in state.searchedData" :key="item._id">
-        <h3 class="question">Умова: {{ item.question }}</h3>
-        <p class="position">Позиція на фото: <h2>{{ item.positionOnPage }}</h2></p>
+        <span class="text"
+          >Умова:
+          <h3 class="question">{{ item.question }}</h3></span
+        >
+        <span class="text">
+          Позиція на фото:
+          <h2>{{ item.positionOnPage }}</h2>
+        </span>
         <div class="thumb">
           <img class="image" :src="item.imageUrl" :alt="item.question" />
         </div>
@@ -79,6 +85,9 @@ function getSearchedResults() {
 <style scoped>
 li {
   list-style: none;
+}
+.text {
+  display: inline-block;
 }
 .read-the-docs {
   color: #888;
